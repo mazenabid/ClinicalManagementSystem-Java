@@ -77,6 +77,8 @@ This table should provide a clear and concise overview of the MVPs, their functi
 
 
 ## Class Diagram 
+![CDentist drawio-4](https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/5cffe072-2b28-4303-a575-ec3e2a6c4fd9)
+
 
 ## Testing
 (To be added later)
