@@ -81,6 +81,50 @@ This table should provide a clear and concise overview of the MVPs, their functi
 
 
 ## Testing
-(To be added later)
+
+### Unit Testing
+Unit testing was conducted on all three MVPs, focusing on critical functions that are essential to the system's operation. This includes adding and managing patients, scheduling appointments, and managing prescriptions.
+
+### Control Flow Graphs
+#### MVP 1: Managing Patients Control Flow Graph
+```mermaid
+graph TD
+  A[Start] --> B[Add Patient]
+  B --> C{Patient Exists?}
+  C -- Yes --> D[Update Patient Info]
+  C -- No --> E[Create New Patient]
+  D --> F[Save Patient Info]
+  E --> F[Save Patient Info]
+  F --> G[End]
+```
+#### MVP 2: Scheduling Appointments Control Flow Graph
+```mermaid
+graph TD
+  A[Start] --> B[Add Appointment]
+  B --> C{Conflict Exists?}
+  C -- Yes --> D[Resolve Conflict]
+  C -- No --> E[Save Appointment]
+  D --> E[Save Appointment]
+  E --> F[Send Reminder]
+  F --> G[End]
+```
+#### MVP 3: Managing Prescriptions Control Flow Graph
+```mermaid
+graph TD
+  A[Start] --> B[Add Prescription]
+  B --> C{Prescription Exists?}
+  C -- Yes --> D[Update Prescription]
+  C -- No --> E[Create New Prescription]
+  D --> F[Save Prescription Info]
+  E --> F[Save Prescription Info]
+  F --> G[Send Prescription to Patient]
+  G --> H[End]
+```
+### Prime Paths
+Prime paths are a set of paths that cover all possible scenarios in the control flow graphs for each MVP. These paths ensure comprehensive testing of all functionalities.
+
+### Test Paths and Test Cases
+Test cases were derived from the prime paths to ensure that all critical paths in the control flow graphs are tested. This includes both positive and negative test cases to cover all edge cases and potential issues.
+
 
 
