@@ -87,39 +87,14 @@ Unit testing was conducted on all three MVPs, focusing on critical functions tha
 
 ### Control Flow Graphs
 #### MVP 1: Managing Patients Control Flow Graph
-```mermaid
-graph TD
-  A[Start] --> B[Add Patient]
-  B --> C{Patient Exists?}
-  C -- Yes --> D[Update Patient Info]
-  C -- No --> E[Create New Patient]
-  D --> F[Save Patient Info]
-  E --> F[Save Patient Info]
-  F --> G[End]
-```
+<img width="829" alt="Patients" src="https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/22aad3a8-3b96-4ba0-8f5c-57ce54e401f0">
+
 #### MVP 2: Scheduling Appointments Control Flow Graph
-```mermaid
-graph TD
-  A[Start] --> B[Add Appointment]
-  B --> C{Conflict Exists?}
-  C -- Yes --> D[Resolve Conflict]
-  C -- No --> E[Save Appointment]
-  D --> E[Save Appointment]
-  E --> F[Send Reminder]
-  F --> G[End]
-```
+<img width="867" alt="Appointment" src="https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/b2b0e625-2f7d-4eea-ae46-a688ab237960">
+
 #### MVP 3: Managing Prescriptions Control Flow Graph
-```mermaid
-graph TD
-  A[Start] --> B[Add Prescription]
-  B --> C{Prescription Exists?}
-  C -- Yes --> D[Update Prescription]
-  C -- No --> E[Create New Prescription]
-  D --> F[Save Prescription Info]
-  E --> F[Save Prescription Info]
-  F --> G[Send Prescription to Patient]
-  G --> H[End]
-```
+<img width="910" alt="Prescriptions" src="https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/4ba65629-6708-402c-8f39-6b953f15c4d8">
+
 ### Prime Paths
 Prime paths are a set of paths that cover all possible scenarios in the control flow graphs for each MVP. These paths ensure comprehensive testing of all functionalities.
 
