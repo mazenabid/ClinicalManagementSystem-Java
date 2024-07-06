@@ -89,14 +89,53 @@ Unit testing was conducted on all three MVPs, focusing on critical functions tha
 #### MVP 1: Managing Patients Control Flow Graph
 <img width="829" alt="Patients" src="https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/22aad3a8-3b96-4ba0-8f5c-57ce54e401f0">
 
+#### Prime Paths for Managing Patients Control Flow Graph
+
+1. **Path 1:** `1 → 2 → 4`
+   - Start → Enter patient name, ID, and contact info → Patient Exists? (Yes) → Update patient info → Save patient info to the database → End
+
+2. **Path 2:** `1 → 3 → 4`
+   - Start → Enter patient name, ID, and contact info → Patient Exists? (No) → Create new patient → Save patient info to the database → End
+
+
 #### MVP 2: Scheduling Appointments Control Flow Graph
 <img width="867" alt="Appointment" src="https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/b2b0e625-2f7d-4eea-ae46-a688ab237960">
+
+#### Prime Paths for Scheduling Appointments Control Flow Graph
+
+1. **Path 1:** `1 → 2 → 3 → 4`
+   - Start → Enter appointment ID, date, time, patient ID, and doctor username → Conflict Exists? (Yes) → Resolve appointment conflict → Save appointment to the database → Send appointment reminder to patient and doctor → End
+
+2. **Path 2:** `1 → 3 → 4`
+   - Start → Enter appointment ID, date, time, patient ID, and doctor username → Conflict Exists? (No) → Save appointment to the database → Send appointment reminder to patient and doctor → End
+
 
 #### MVP 3: Managing Prescriptions Control Flow Graph
 <img width="910" alt="Prescriptions" src="https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/4ba65629-6708-402c-8f39-6b953f15c4d8">
 
-### Prime Paths
-Prime paths are a set of paths that cover all possible scenarios in the control flow graphs for each MVP. These paths ensure comprehensive testing of all functionalities.
+#### Prime Paths for Managing Prescriptions Control Flow Graph
+
+1. **Path 1:** `1 → 2 → 4 → 5`
+   - Start → Enter prescription ID, patient ID, medication, dosage, instructions, and doctor username → Prescription Exists? (Yes) → Update existing prescription → Save prescription info to the database → Send prescription details to the patient → End
+
+2. **Path 2:** `1 → 3 → 4 → 5`
+   - Start → Enter prescription ID, patient ID, medication, dosage, instructions, and doctor username → Prescription Exists? (No) → Create new prescription → Save prescription info to the database → Send prescription details to the patient → End
+
+## Prime Paths
+Prime paths are a set of paths that cover all possible scenarios in the control flow graphs for each MVP. These paths ensure comprehensive testing of all functionalities. A  Summary of Prime Paths in Numbers are as follows:
+
+### Managing Patients:
+1. Path 1: `1 → 2 → 4`
+2. Path 2: `1 → 3 → 4`
+
+### Scheduling Appointments:
+1. Path 1: `1 → 2 → 3 → 4`
+2. Path 2: `1 → 3 → 4`
+
+### Managing Prescriptions:
+1. Path 1: `1 → 2 → 4 → 5`
+2. Path 2: `1 → 3 → 4 → 5`
+
 
 ### Test Paths and Test Cases
 Test cases were derived from the prime paths to ensure that all critical paths in the control flow graphs are tested. This includes both positive and negative test cases to cover all edge cases and potential issues.
