@@ -152,6 +152,45 @@ Test cases were derived from the prime paths to ensure that all critical paths i
 | Managing Prescriptions    | Create New Prescription               | `1 → 3 → 4 → 5`    | Create a new prescription                                                | 1. Enter prescription ID, patient ID, medication, dosage, instructions, and doctor username<br>2. Check if the prescription exists<br>3. Create new prescription<br>4. Save prescription info to the database<br>5. Send prescription details to the patient | Prescription ID: RX002<br>Patient ID: P002<br>Medication: Paracetamol<br>Dosage: 500mg<br>Instructions: Take thrice daily<br>Doctor Username: doc2 | The new prescription is created, saved in the database, and details are sent to the patient.                   |
 
 
+# Integration Testing
+
+## Def-Use Graphs
+
+### Managing Patients Def-Use Graph
+
+```mermaid
+graph TD
+    A[Initialize Patient Details] --> B[Enter patient name, ID, and contact info]
+    B --> C{Patient Exists?}
+    C -- Yes --> D[Update patient info]
+    C -- No --> E[Create new patient]
+    D --> F[Save patient info to the database]
+    E --> F[Save patient info to the database]
+```
+### Scheduling Appointments Def-Use Graph
+```mermaid
+graph TD
+    A[Initialize Appointment Details] --> B[Enter appointment ID, date, time, patient ID, and doctor username]
+    B --> C{Conflict Exists?}
+    C -- Yes --> D[Resolve appointment conflict]
+    C -- No --> E[Save appointment to the database]
+    D --> E[Save appointment to the database]
+    E --> F[Send appointment reminder to patient and doctor]
+```
+
+### Managing Prescriptions Def-Use Graph
+```mermaid
+graph TD
+    A[Initialize Prescription Details] --> B[Enter prescription ID, patient ID, medication, dosage, instructions, and doctor username]
+    B --> C{Prescription Exists?}
+    C -- Yes --> D[Update existing prescription]
+    C -- No --> E[Create new prescription]
+    D --> F[Save prescription info to the database]
+    E --> F[Save prescription info to the database]
+    F --> G[Send prescription details to the patient]
+```
+
+
 
 
 
