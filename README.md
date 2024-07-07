@@ -232,4 +232,61 @@ graph TD
 | Create New Prescription               | Initialize -> Enter -> Exists? -> Create -> Save -> Send | Create a new prescription                                                | Prescription ID: RX002, Patient ID: P002, Medication: Paracetamol, Dosage: 500mg, Instructions: Take thrice daily, Doctor Username: doc2 | The new prescription is created, saved in the database, and details are sent to the patient.                   |
 
 
+# System Testing
 
+System Testing was done on the entire Dental Clinic Management System. To accomplish this, we extracted a Finite State Machine and used node coverage, a form of graph coverage, to test it. We did not use logic coverage since we did not have hardcoded predicates to guard the transition between states. If we did have predicates dictating the transition in our code, we would have used logic coverage.
+
+## Finite State Machine
+
+```mermaid
+stateDiagram
+    [*] --> Initialize
+    Initialize --> EnterPatientDetails: Enter patient details
+    EnterPatientDetails --> CheckPatientExists: Check if patient exists
+    CheckPatientExists --> UpdatePatientInfo: Update patient info if exists
+    CheckPatientExists --> CreateNewPatient: Create new patient if not exists
+    UpdatePatientInfo --> SavePatientInfo: Save updated patient info
+    CreateNewPatient --> SavePatientInfo: Save new patient info
+    SavePatientInfo --> [*]
+    
+    Initialize --> EnterAppointmentDetails: Enter appointment details
+    EnterAppointmentDetails --> CheckConflict: Check for conflicts
+    CheckConflict --> ResolveConflict: Resolve conflict if exists
+    CheckConflict --> SaveAppointment: Save appointment if no conflict
+    ResolveConflict --> SaveAppointment: Save resolved appointment
+    SaveAppointment --> SendReminders: Send appointment reminders
+    SendReminders --> [*]
+    
+    Initialize --> EnterPrescriptionDetails: Enter prescription details
+    EnterPrescriptionDetails --> CheckPrescriptionExists: Check if prescription exists
+    CheckPrescriptionExists --> UpdatePrescription: Update prescription if exists
+    CheckPrescriptionExists --> CreateNewPrescription: Create new prescription if not exists
+    UpdatePrescription --> SavePrescription: Save updated prescription
+    CreateNewPrescription --> SavePrescription: Save new prescription
+    SavePrescription --> SendPrescriptionDetails: Send prescription details
+    SendPrescriptionDetails --> [*]
+```
+
+## Future Work
+
+### Visual Representations
+- **Dashboards**: Develop comprehensive dashboards to visualize key metrics and data, such as:
+  - Patient statistics
+  - Appointment schedules
+  - Prescription details
+
+### Enhanced Appointment Scheduling
+- **Rescheduling**: Implement features that allow patients and staff to reschedule appointments easily.
+- **Cancellation**: Provide functionality for canceling appointments with automated notifications to both patients and staff.
+
+### Comprehensive Clinic Management
+- **Billing**: Integrate billing functionalities to handle patient invoices, payments, and insurance claims.
+- **Inventory Management**: Develop a module to manage dental supplies, track inventory levels, and generate purchase orders.
+- **Patient Feedback**: Implement a system for collecting and analyzing patient feedback to improve service quality.
+
+### Additional Features
+- **Notification System**: Enhance the system with email and SMS notifications for appointment reminders, prescription pickups, and more.
+- **Reporting**: Create detailed reports for clinic management to analyze performance, patient trends, and operational efficiency.
+- **Security Enhancements**: Ensure data security and privacy with robust authentication, encryption, and access control measures.
+
+As a team, We believe that by implementing these features, the Dental Clinic Management System will become more robust, user-friendly, and capable of meeting the comprehensive needs of the clinic.
