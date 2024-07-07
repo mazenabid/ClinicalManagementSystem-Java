@@ -190,7 +190,46 @@ graph TD
     F --> G[Send prescription details to the patient]
 ```
 
+## DU Paths and Test Cases
 
+### DU Paths for Managing Patients
+
+**DU Path 1:** `Initialize Patient Details -> Enter patient name, ID, and contact info -> Patient Exists? -> Update patient info -> Save patient info to the database`
+
+**DU Path 2:** `Initialize Patient Details -> Enter patient name, ID, and contact info -> Patient Exists? -> Create new patient -> Save patient info to the database`
+
+### Test Cases for Managing Patients
+
+| **Test Case**                         | **Path**                          | **Description**                                                         | **Test Values**                                                                                              | **Expected Result**                                                                                            |
+|---------------------------------------|-----------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Update Existing Patient Info          | Initialize -> Enter -> Exists? -> Update -> Save | Update an existing patient's information                                 | Patient Name: John Doe, Patient ID: P001, Contact Info: 555-1234, New Contact Info: 555-5678                   | The patient's info is successfully updated and saved in the database.                                           |
+| Create New Patient                    | Initialize -> Enter -> Exists? -> Create -> Save | Create a new patient                                                     | Patient Name: Jane Smith, Patient ID: P002, Contact Info: 555-0000                                             | The new patient's info is successfully created and saved in the database.                                       |
+
+### DU Paths for Scheduling Appointments
+
+**DU Path 1:** `Initialize Appointment Details -> Enter appointment ID, date, time, patient ID, and doctor username -> Conflict Exists? -> Resolve appointment conflict -> Save appointment to the database -> Send appointment reminder to patient and doctor`
+
+**DU Path 2:** `Initialize Appointment Details -> Enter appointment ID, date, time, patient ID, and doctor username -> Conflict Exists? -> Save appointment to the database -> Send appointment reminder to patient and doctor`
+
+### Test Cases for Scheduling Appointments
+
+| **Test Case**                         | **Path**                                             | **Description**                                                         | **Test Values**                                                                                              | **Expected Result**                                                                                            |
+|---------------------------------------|------------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Resolve Appointment Conflict          | Initialize -> Enter -> Conflict Exists? -> Resolve -> Save -> Send | Resolve a conflict when scheduling an appointment                        | Appointment ID: A001, Date: 2024-07-10, Time: 10:00 AM, Patient ID: P001, Doctor Username: doc1                | The appointment conflict is resolved, and the appointment is saved and reminders are sent.                      |
+| Save Appointment without Conflict     | Initialize -> Enter -> Conflict Exists? -> Save -> Send | Save an appointment without any conflicts                                | Appointment ID: A002, Date: 2024-07-11, Time: 11:00 AM, Patient ID: P002, Doctor Username: doc2                | The appointment is saved and reminders are sent without any conflicts.                                          |
+
+### DU Paths for Managing Prescriptions
+
+**DU Path 1:** `Initialize Prescription Details -> Enter prescription ID, patient ID, medication, dosage, instructions, and doctor username -> Prescription Exists? -> Update existing prescription -> Save prescription info to the database -> Send prescription details to the patient`
+
+**DU Path 2:** `Initialize Prescription Details -> Enter prescription ID, patient ID, medication, dosage, instructions, and doctor username -> Prescription Exists? -> Create new prescription -> Save prescription info to the database -> Send prescription details to the patient`
+
+### Test Cases for Managing Prescriptions
+
+| **Test Case**                         | **Path**                                            | **Description**                                                         | **Test Values**                                                                                              | **Expected Result**                                                                                            |
+|---------------------------------------|-----------------------------------------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Update Existing Prescription          | Initialize -> Enter -> Exists? -> Update -> Save -> Send | Update an existing prescription                                          | Prescription ID: RX001, Patient ID: P001, Medication: Ibuprofen, Dosage: 200mg, Instructions: Take twice daily, Doctor Username: doc1, New Dosage: 300mg | The existing prescription is updated, saved in the database, and details are sent to the patient.              |
+| Create New Prescription               | Initialize -> Enter -> Exists? -> Create -> Save -> Send | Create a new prescription                                                | Prescription ID: RX002, Patient ID: P002, Medication: Paracetamol, Dosage: 500mg, Instructions: Take thrice daily, Doctor Username: doc2 | The new prescription is created, saved in the database, and details are sent to the patient.                   |
 
 
 
