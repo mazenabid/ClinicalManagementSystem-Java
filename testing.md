@@ -16,17 +16,8 @@ The selection of this solution is based on its ability to provide a holistic and
 #### 3.3.1 Components
 The final solution incorporates several key components, each serving a specific purpose to ensure smooth operation and management of the clinical system. Below is a block diagram (Fig. 1) representing the connectivity and interaction between the components.
 
-```
-graph TD
-    A[User Interface (UI)] -->|Interacts with| B[User Authentication Module]
-    A -->|Interacts with| C[Appointment Scheduler]
-    A -->|Interacts with| D[Patient Management System]
-    A -->|Interacts with| E[Prescription Management System]
-    B -->|Stores data in| F[(Database)]
-    C -->|Stores data in| F[(Database)]
-    D -->|Stores data in| F[(Database)]
-    E -->|Stores data in| F[(Database)]
-```
+<img width="464" alt="Screenshot 2024-07-22 at 4 56 36 PM" src="https://github.com/user-attachments/assets/49429cd1-c645-4059-bc99-f8a7f6320665">
+
 **Fig. 1 - Block Diagram of Clinical Management System**
 
 
