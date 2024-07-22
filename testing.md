@@ -1,7 +1,7 @@
 ### 3.3 Final Solution
 
 #### Explanation of Final Solution Superiority
-This solution stands out due to its comprehensive integration of user roles, intuitive interface, and extensive feature set tailored to meet the needs of a clinical management system. Below is a comparison table highlighting key aspects where this solution excels over alternative solutions.
+This solution stands out due to its comprehensive integration of user roles, simple interface, and extensive feature set to meet the needs of a clinical management system. Below is a comparison table highlighting key aspects where this solution excels over alternative solutions.
 
 | Feature                    | This Solution                                             | Other Solutions                                          |
 |----------------------------|-----------------------------------------------------------|----------------------------------------------------------|
@@ -63,6 +63,37 @@ The engineering design took into account several critical considerations:
 
 ## 3.3.4 Test Cases and Results (Solution Implementation)
 To ensure the robustness and reliability of the prototype, several test suites were designed:
+
+## Solution Implementation
+
+### MVP Descriptions
+| MVP                         | Accounts for                                           | Testing                          | Conclusion                                                                                           |
+|-----------------------------|--------------------------------------------------------|----------------------------------|------------------------------------------------------------------------------------------------------|
+| 1. Managing Patients        | Adding, Removing, Updating, Viewing, Searching Patients| Unit                             | Works well and allows for basic patient management functionality. More features could improve usability. |
+| 2. Scheduling Appointments  | Adding, Removing, Updating, Viewing, Handling Conflicts| Unit, Integration                | Handles scheduling well but could benefit from better conflict resolution and reminders.               |
+| 3. Managing Prescriptions   | Adding, Removing, Updating, Viewing Prescriptions      | Unit, Integration, System        | Effective for prescription management but could be enhanced with prescription validation and alerts.    |
+
+### Explanation:
+### MVP 1: Managing Patients
+
+Accounts for: Basic CRUD (Create, Read, Update, Delete) operations on patient records.
+Testing: Unit tests focus on individual functionalities like adding, removing, and updating patient information.
+Conclusion: The system effectively manages patient records but could benefit from additional features for enhanced usability.
+### MVP 2: Scheduling Appointments
+
+Accounts for: Scheduling-related functionalities including adding, removing, updating appointments, and handling conflicts.
+Testing: Both unit and integration tests ensure that individual functionalities and their interactions are working correctly.
+Conclusion: The appointment scheduling system works well but could be improved with better conflict resolution strategies and reminders for appointments.
+### MVP 3: Managing Prescriptions
+
+#### Accounts for: Managing prescription-related tasks including adding, removing, updating, and viewing prescriptions.
+Testing: Comprehensive tests including unit, integration, and system tests to cover all aspects of prescription management.
+Conclusion: The system is effective in managing prescriptions but could be enhanced with features like prescription validation and alert systems for better patient safety.
+This table should provide a clear and concise overview of the MVPs, their functionalities, testing methods, and conclusions. If you need further adjustments or additional details, feel free to ask!
+
+
+## Class Diagram 
+![CDentist drawio-4](https://github.com/mazenabid/ClinicalManagementSystem-Java/assets/87061766/5cffe072-2b28-4303-a575-ec3e2a6c4fd9)
 
 ### Unit Testing
 Unit testing was conducted on all three MVPs, focusing on critical functions that are essential to the system's operation. This includes adding and managing patients, scheduling appointments, and managing prescriptions.
