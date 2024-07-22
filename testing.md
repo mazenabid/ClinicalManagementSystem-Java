@@ -292,7 +292,12 @@ The JUnit test for our test folder in the project shows that we have 71 tests th
 <img width="1250" alt="Screenshot 2024-07-22 at 4 39 49 PM" src="https://github.com/user-attachments/assets/a171c7c5-6fb9-4f29-9cc1-93ebef2b1e12">
 
 ### Test Coverage
-The test coverage is arguably the most important part of testing our code for the project. Below you can see that we achieved a 
+The test coverage is arguably the most important part of testing our code for the project. Below you can see that we achieved a 100% test coverage on most files. You can also check each percentage for each file in the folder called `Test Coverage` in this repository.
+
+![Test Coverage](https://github.com/user-attachments/assets/a55bd48b-1671-4ce3-9d49-e9d24c4749c7)
+
+The reason why we achieved only 80% test coverage for User.java was because it tested for passwords but we have them hard coded so it wasn't necessary to test something password related since we aren't connected to any backend database like MySQL.
+We also achieved a 98.6% for Appointement.java, the reason we didn't reach a 100% is because we didn't add a NULL for appointments.
 
 #### 3.3.5 Limitations
 Despite its strengths, the solution has some limitations:
