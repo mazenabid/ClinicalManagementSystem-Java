@@ -285,7 +285,8 @@ Now that we have all the theoritical components and the diagrams in place, it is
 
 ### JUnit test 
 The JUnit test for our test folder in the project shows that we have 71 tests that run wih no errors or failures.
-<img width="1440" alt="Screenshot 2024-07-22 at 4 37 13 PM" src="https://github.com/user-attachments/assets/9ae96d9f-ae1e-451b-8f8f-a76cd13a97bd">
+
+<img width="1250" alt="Screenshot 2024-07-22 at 4 39 49 PM" src="https://github.com/user-attachments/assets/a171c7c5-6fb9-4f29-9cc1-93ebef2b1e12">
 
 
 
