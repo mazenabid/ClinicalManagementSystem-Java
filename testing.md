@@ -16,6 +16,18 @@ The selection of this solution is based on its ability to provide a holistic and
 #### 3.3.1 Components
 The final solution incorporates several key components, each serving a specific purpose to ensure smooth operation and management of the clinical system. Below is a block diagram (Fig. 1) representing the connectivity and interaction between the components.
 
+```mermaid
+graph TD
+    A[User Interface (UI)] -->|Interacts with| B[User Authentication Module]
+    A -->|Interacts with| C[Appointment Scheduler]
+    A -->|Interacts with| D[Patient Management System]
+    A -->|Interacts with| E[Prescription Management System]
+    B -->|Stores data in| F[(Database)]
+    C -->|Stores data in| F[(Database)]
+    D -->|Stores data in| F[(Database)]
+    E -->|Stores data in| F[(Database)]
+```
+
 **Components Used:**
 1. **User Authentication Module**: Handles login/logout functionality for different user roles.
 2. **Appointment Scheduler**: Manages patient appointments, including adding, updating, and viewing appointments.
