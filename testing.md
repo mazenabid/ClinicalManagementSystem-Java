@@ -280,6 +280,14 @@ stateDiagram
     SendPrescriptionDetails --> [*]
 ```
 
+## ECLIPSE Test Cases & Test Coverages
+Now that we have all the theoritical components and the diagrams in place, it is time to check our test on Eclispse.
+
+### JUnit test 
+The JUnit test for our test folder in the project shows that we have 71 tests that run wih no errors or failures.
+<img width="1440" alt="Screenshot 2024-07-22 at 4 37 13 PM" src="https://github.com/user-attachments/assets/9ae96d9f-ae1e-451b-8f8f-a76cd13a97bd">
+
+
 
 #### 3.3.5 Limitations
 Despite its strengths, the solution has some limitations:
