@@ -281,14 +281,15 @@ stateDiagram
 ```
 
 ## ECLIPSE Test Cases & Test Coverages
-Now that we have all the theoritical components and the diagrams in place, it is time to check our test on Eclispse.
+Now that we have all the theoritical components and the diagrams in place, it is time to check our tests on Eclispse, which the whole point of our project.
 
 ### JUnit test 
 The JUnit test for our test folder in the project shows that we have 71 tests that run wih no errors or failures.
 
 <img width="1250" alt="Screenshot 2024-07-22 at 4 39 49 PM" src="https://github.com/user-attachments/assets/a171c7c5-6fb9-4f29-9cc1-93ebef2b1e12">
 
-
+### Test Coverage
+The test coverage is arguably the most important part of testing our code for the project. Below you can see that we achieved a 
 
 #### 3.3.5 Limitations
 Despite its strengths, the solution has some limitations:
