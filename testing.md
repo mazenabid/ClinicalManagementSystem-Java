@@ -25,7 +25,7 @@ The final solution incorporates several key components, each serving a specific 
 1. **User Authentication Module**: Handles login/logout functionality for different user roles.
 2. **Appointment Scheduler**: Manages patient appointments, including adding, updating, and viewing appointments.
 3. **Patient Management System**: Stores and manages patient information.
-4. **Prescription Management System**: Allows doctors to create and manage prescriptions.
+4. **Prescription Management System**: Allows doctors to create and manage prescriptions (could be expanded for connecting databases).
 5. **Database**: Stores all data securely, including user information, patient details, appointments, and prescriptions.
 6. **User Interface (UI)**: Provides an intuitive interface for interaction with the system.
 
