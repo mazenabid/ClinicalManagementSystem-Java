@@ -303,8 +303,7 @@ The test coverage is arguably the most important part of testing our code for th
 
 - **Appointment.java Test Coverage (98.6%)**
   - The test coverage for `Appointment.java` achieved 98.6%.
-  - We did not reach 100% coverage because NULL checks for appointments were not added.
-  - Adding NULL checks created hashes that we were unable to resolve.
+  - We did not achieve 100% coverage due to the nature of a function within the class. This function compares two appointments and returns    true if they are identical or false if they are different. It also checks if any individual components within each appointment are the      same. However, since the initial comparison often returns true, the checks for individual components do not proceed further.
 
 - **Main Method Test Coverage (0%)**
   - We did not test the main method as it is uncommon and unnecessary.
