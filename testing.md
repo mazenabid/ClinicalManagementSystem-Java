@@ -27,6 +27,8 @@ graph TD
     D -->|Stores data in| F[(Database)]
     E -->|Stores data in| F[(Database)]
 ```
+**Fig. 1 - Block Diagram of Clinical Management System**
+
 
 **Components Used:**
 1. **User Authentication Module**: Handles login/logout functionality for different user roles.
@@ -36,9 +38,7 @@ graph TD
 5. **Database**: Stores all data securely, including user information, patient details, appointments, and prescriptions.
 6. **User Interface (UI)**: Provides an intuitive interface for interaction with the system.
 
-![Block Diagram of Clinical Management System](https://via.placeholder.com/400x300.png?text=Fig.+1+-+Block+Diagram+of+Clinical+Management+System)
 
-**Fig. 1 - Block Diagram of Clinical Management System**
 
 #### 3.3.2 Features
 
