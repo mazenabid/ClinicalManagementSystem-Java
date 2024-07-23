@@ -98,6 +98,16 @@ public void testUseCaseAppointmentScheduling() {
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
 # DoctorTest.java
 
 ## 1.Boundary Value Testing
@@ -298,6 +308,122 @@ public void testUseCasePatientRegistration() {
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ReceptionestTest.java
+
+## 1.Boundary Value Testing
+```java
+@Test
+public void testAddPatientBoundaryValues() {
+    // Minimum length ID
+    Patient patientMinID = new Patient("John Doe", "P1", "555-1234");
+    receptionist.addPatient(patientMinID);
+    assertTrue(receptionist.getPatients().contains(patientMinID));
+
+    // Maximum length ID
+    Patient patientMaxID = new Patient("John Doe", "P123456789012345", "555-1234");
+    receptionist.addPatient(patientMaxID);
+    assertTrue(receptionist.getPatients().contains(patientMaxID));
+}
+```
+## 2.Equivalence Class Testing
+```java
+@Test
+public void testUpdatePatientEquivalenceClasses() {
+    receptionist.addPatient(patient);
+    
+    // Valid contact info
+    patient.setContactInfo("555-0000");
+    assertEquals("555-0000", receptionist.getPatients().get(0).getContactInfo());
+
+    // Invalid contact info (equivalence class of invalid contacts)
+    try {
+        patient.setContactInfo("invalid-contact");
+        fail("Should throw an exception for invalid contact info");
+    } catch (IllegalArgumentException e) {
+        // Expected exception
+    }
+}
+```
+## 3.Decision Table Testing
+```java
+@Test
+public void testDecisionTableForPatientManagement() {
+    // Add patient with valid details
+    Patient validPatient = new Patient("Jane Doe", "P002", "555-5678");
+    receptionist.addPatient(validPatient);
+    assertTrue(receptionist.getPatients().contains(validPatient));
+
+    // Remove patient with valid details
+    receptionist.removePatient(validPatient);
+    assertFalse(receptionist.getPatients().contains(validPatient));
+
+    // Add patient with invalid details
+    try {
+        Patient invalidPatient = new Patient("", "P003", "555-5678");
+        receptionist.addPatient(invalidPatient);
+        fail("Should throw an exception for invalid patient details");
+    } catch (IllegalArgumentException e) {
+        // Expected exception
+    }
+}
+```
+## 4.State Transition Testing
+```java
+@Test
+public void testStateTransition() {
+    // Initial state: No patients
+    assertEquals(0, receptionist.getPatients().size());
+
+    // Transition to having one patient
+    receptionist.addPatient(patient);
+    assertEquals(1, receptionist.getPatients().size());
+
+    // Transition to having no patients
+    receptionist.removePatient(patient);
+    assertEquals(0, receptionist.getPatients().size());
+
+    // Invalid transition: removing a non-existent patient
+    try {
+        receptionist.removePatient(patient);
+        fail("Should throw an exception for removing a non-existent patient");
+    } catch (IllegalStateException e) {
+        // Expected exception
+    }
+}
+```
+## 5.Use Case testing
+```java
+@Test
+public void testUseCaseManagingPatient() {
+    // Receptionist logs in and adds a new patient
+    User receptionistUser = new User("receptionist", "password");
+    assertTrue(receptionistUser.login());
+
+    // Add patient details
+    Patient newPatient = new Patient("Alice Smith", "P002", "555-5678");
+    receptionist.addPatient(newPatient);
+    assertTrue(newPatient.isInSystem());
+
+    // Verify patient details
+    assertEquals("Alice Smith", newPatient.getName());
+    assertEquals("P002", newPatient.getPatientID());
+    assertEquals("555-5678", newPatient.getContactInfo());
+}
+```
 
 
 
