@@ -1,7 +1,93 @@
-### 3.3 Final Solution
+# 1 Introduction
 
-#### Explanation of Final Solution Superiority
-This solution stands out due to its comprehensive integration of user roles, simple interface, and extensive feature set to meet the needs of a clinical management system. Below is a comparison table highlighting key aspects where this solution excels over alternative solutions.
+The Campus Dental Clinic at the University of Regina faces many problems including managing patient records, making appointments, billing, and maintaining inventory. As a result, this poses a burden on administration leading to longer waiting times for patients as well as mistakes in record-keeping. In response to this problem, we developed a full-fledged software application using Java Programming Language that is aimed at automating and streamlining all activities of the clinic.
+
+The proposed dental clinic management system has been designed to provide an integrated solution which can handle different aspects of the clinic's operations. This will enable receptionists to efficiently add patients’ information, schedule appointments, and manage patient records. Dentists will be able to seamlessly view their daily appointments, update patient records, and prescribe drugs. Additionally, the system will have other features such as appointment reminders and safe user management modules that enhance secure operation.
+
+In sections following this one, we present detailed descriptions of the design requirements of this system, implementation details used, testing strategies applied, and future work. The section starts by discussing design requirements which are objectives and constraints for the system then implementation details which mainly address architecture and testing.
+
+# 2 Design Problem
+
+## 2.1 Problem Definition
+
+The University of Regina Campus Dentist Clinic is committed to delivering top-notch dental care to students, faculty, and staff. Nevertheless, the clinic encounters substantial obstacles in organizing patient records, scheduling appointments, managing billing, and overseeing inventory. These hurdles lead to heightened administrative tasks, extended patient wait times, and the possibility of inaccuracies in record-keeping. The main objective of this project is to create a sophisticated software application that tackles these issues by simplifying and automating the clinic's processes, ultimately boosting efficiency, precision, and overall patient contentment.
+
+## 2.2 Design Requirements
+
+### 2.2.1 Functions
+
+The key functions for the Dental Clinic Management System mainly include:
+1. **Appointment Scheduling**: The system facilitates the efficient organization of appointments, allowing patients to book time slots with their preferred dentists seamlessly.
+2. **Managing Patient Records**: It manages records, including personal information, dental history, and contact details.
+3. **Collecting Information**: Collect and store information, including medical history and prescription details.
+4. **Updating Information**: Update inventory and personal records as well for the doctor and the receptionist.
+
+### 2.2.2 Objectives
+
+The primary objectives of the Dental Clinic Management System are to be:
+1. **Efficient**: Ease of use when it comes to the process of booking and managing dental appointments.
+2. **Secure**: Ensure the security of patient data and restrict access to authorized personnel only.
+3. **Reliable**: Provide a dependable system that can handle multiple users and transactions simultaneously without failures, this will especially prevail when it comes to testing.
+4. **User-Friendly**: Design an intuitive and easy-to-use interface for all users, including receptionists, dentists, and patients.
+5. **Accessible**: Ensure the system is accessible to all users, including those with disabilities.
+6. **Adaptable**: Allow for future enhancements and scalability to accommodate the clinic's growing needs, or for that matter, other clinics too.
+
+### 2.2.3 Constraints
+
+The constraints for the Dental Clinic Management System are the following:
+1. **Economic**: The project must be developed within a limited budget, using cost-effective solutions and free or open-source tools wherever possible.
+2. **Regulatory Compliance**: The system must comply with data security and privacy regulations, ensuring that patient information is protected and only accessible by authorized personnel.
+3. **Reliability**: The system must be reliable, capable of supporting multiple users without performance degradation.
+4. **Ethics**: The system must ensure the privacy and accuracy of patient data, allowing patients to update their own contact information while restricting access to sensitive dental records to authorized users.
+
+# 3 Solution
+
+In this section, we present an overview of the different solutions brainstormed for implementing the Dental Clinic Management System. Each solution went under evaluation based on its capacity to incorporate the desired features within the specified constraints. The iterative process of engineering design guided us to choose the most viable and efficient solution.
+
+## 3.1 Solution 1
+
+The initial solution entailed creating a straightforward, independent desktop application using Java Swing for the user interface and a basic file-based system for data storage. This approach was simple to execute and demanded minimal resources.
+
+**Reasons for Not Selecting Solution 1:**
+1. **Limited Scalability**: The file-based storage system could not efficiently handle a large number of records.
+2. **Security Concerns**: File-based storage posed significant security risks, as it lacked robust data protection mechanisms.
+3. **Lack of Advanced Features**: This solution could not support advanced features such as automated reminders, comprehensive reporting, and secure user authentication.
+
+## 3.2 Solution 2
+
+The second solution improved upon the first by incorporating a relational database management system (RDBMS) for data storage and using JavaFX for a more modern and responsive user interface. This solution aimed to address the scalability and security issues identified in the first solution.
+
+**Description of Solution 2:**
+1. **Database Integration**: Utilized MySQL for secure and scalable data storage.
+2. **Modern UI**: Implemented a responsive user interface using JavaFX.
+3. **Enhanced Security**: Included basic user authentication and data encryption.
+
+**Reasons for Not Selecting Solution 2:**
+1. **Complexity**: The integration of JavaFX and MySQL increased the complexity of the application.
+2. **Partial Feature Set**: While improved, this solution still lacked some advanced features such as comprehensive scheduling conflict resolution and detailed reporting.
+## 3.3 Final Solution
+
+The final solution builds upon the improvements of the second solution, incorporating additional features and ensuring all constraints are satisfied. This solution uses a compiler-based architecture, providing a centralized platform accessible to all users through a compiler.
+
+**Description of the Final Solution:**
+1. **Compiler-Based Architecture**: Developed a comprehensive system using Java to ensure efficient code execution and robust error handling.
+2. **Standalone Application**: Implemented as a standalone desktop application, providing a user-friendly interface through JavaFX.
+3. **Centralized Data Storage**: Utilized a file-based system for storing patient records, appointments, and prescriptions in a secure and organized manner.
+4. **Comprehensive Feature Set**: Included advanced scheduling, automated reminders, detailed reporting, and secure user authentication.
+
+**Comparison Table**
+
+| Feature/Constraint      | Solution 1     | Solution 2   | Final Solution |
+|-------------------------|----------------|--------------|----------------|
+| Scalability             | Low            | Improved     | High           |
+| Security                | Low            | Medium       | High           |
+| Advanced Scheduling     | No             | Partial      | Yes            |
+| Automated Reminders     | No             | Yes          | Yes            |
+| Detailed Reporting      | No             | Partial      | Yes            |
+| User Authentication     | Basic          | Improved     | Robust         |
+| Complexity              | Medium         | High         | Low            |
+
+**Additional Comparison Table**
 
 | Feature                    | This Solution                                             | Other Solutions                                          |
 |----------------------------|-----------------------------------------------------------|----------------------------------------------------------|
@@ -11,7 +97,8 @@ This solution stands out due to its comprehensive integration of user roles, sim
 | Usability                  | User-friendly interface with clear navigation             | Complicated or outdated interfaces                        |
 | Expandability              | Designed with future scalability in mind                  | Limited to current features with no expansion options     |
 
-The selection of this solution is based on its ability to provide a holistic and efficient approach to managing clinical operations, thus improving productivity and patient care.
+**Reasons for Selecting the Final Solution:**
+Since our main focus is on testing, the final solution offers the most comprehensive feature set, addressing all functional and non-functional requirements. It provides a scalable, secure, and user-friendly platform, making it the best choice for the system.
 
 #### 3.3.1 Components
 The final solution incorporates several key components, each serving a specific purpose to ensure smooth operation and management of the clinical system. Below is a block diagram (Fig. 1) representing the connectivity and interaction between the components.
@@ -319,3 +406,120 @@ Despite its strengths, the solution has some limitations:
 - **User Training**: very simple training is required for users to fully utilize the system’s capabilities.
 - **Integration**: Limited integration with other third-party healthcare systems, which could restrict interoperability, especially if our plan was to be used for the university, we would connect a large database with thousand of students, which could be a potential problem.
 
+# 4 Teamwork
+
+Since this is a group project, tasks were distributed fairly among team members. Meetings were held regularly to discuss task distribution and track project progress.
+
+## 4.1 Meeting 1
+
+**Time:** June 10, 2024, 10:00 AM to 11:00 AM  
+**Agenda:** Distribution of Project Tasks
+
+| Team Member      | Previous Task Completion State | Next Task |
+|------------------|--------------------------------|-----------|
+| Mazen Abid       | N/A                            | Task 1    |
+| Ethan Goski      | N/A                            | Task 2    |
+| Froillo Raquinio | N/A                            | Task 3    |
+
+## 4.2 Meeting 2
+
+**Time:** June 17, 2024, 2:00 PM to 3:00 PM  
+**Agenda:** Review of Individual Progress
+
+| Team Member      | Previous Task Completion State | Next Task       |
+|------------------|--------------------------------|-----------------|
+| Mazen Abid       | Task 1                         | 80% Task 1, Task 5 |
+| Ethan Goski      | Task 2                         | 50% Task 2      |
+| Froillo Raquinio | Task 3                         | 60% Task 6      |
+
+## 4.3 Meeting 3
+
+**Time:** June 24, 2024, 1:00 PM to 2:00 PM  
+**Agenda:** Mid-Project Review
+
+| Team Member      | Previous Task Completion State | Next Task       |
+|------------------|--------------------------------|-----------------|
+| Mazen Abid       | Task 1, Task 5                 | 100%, 50% Task 5, Task 7 |
+| Ethan Goski      | Task 2                         | 80% Task 2, Task 8 |
+| Froillo Raquinio | Task 6                         | 100% Task 9     |
+
+## 4.4 Meeting 4
+
+**Time:** July 22, 2024, 3:00 PM to 4:00 PM  
+**Agenda:** Final Review and Testing
+
+| Team Member      | Previous Task Completion State | Next Task       |
+|------------------|--------------------------------|-----------------|
+| Mazen Abid       | Task 5, Task 7                 | 100%, 90% Task 10 |
+| Ethan Goski      | Task 2, Task 8                 | 100%, 70% Task 11 |
+| Froillo Raquinio | Task 9                         | 100% Task 12    |
+
+## Task List
+
+1. Requirements Gathering: Collect detailed requirements for the Dental Clinic Management System.
+2. Initial Design: Create an initial design and architecture for the system.
+3. Backend Development: Develop the backend logic and data handling using Java.
+4. Frontend Development: Develop the user interface using JavaFX if possible.
+5. Database Setup: Configure the file-based storage system for data management.
+6. Integration: Integrate the backend and frontend components if possible.
+7. Unit Testing: Write and execute unit tests for individual components.
+8. Integration Testing: Conduct integration testing to ensure components work together.
+9. System Testing: Perform end-to-end testing of the entire system.
+10. User Acceptance Testing: Ensure the system meets user requirements and expectations.
+11. Documentation: Create comprehensive documentation for the system.
+12. Final Review and Adjustments: Conduct a final review and make necessary adjustments.
+
+# 5 Project Management
+
+## Gantt Chart
+
+Below is the Gantt chart showing the progress of our work, including tasks, their predecessors, slack time, and the critical path.
+![ChartOnFig](https://github.com/user-attachments/assets/dc30a732-3434-41d6-9682-83bd7b78f11a)
+
+
+## Critical Path
+
+The critical path includes the following tasks:
+1. Project Kickoff
+2. Requirements Gathering
+3. Initial Design
+4. Final Design
+5. Backend Development
+6. Integration
+7. System Testing
+8. User Acceptance Testing
+9. Documentation
+10. Final Review and Adjustments
+11. Project Completion
+
+## Slack Time
+
+Slack time for non-critical tasks (e.g., Review and Feedback, Database Setup) allows some flexibility in the schedule without affecting the overall project timeline.
+
+
+# 6 Conclusion and Future Work
+
+## Conclusion
+
+In this project, we successfully designed and implemented the Dental Clinic Management System, meeting the project's functional and non-functional requirements. The key achievements include:
+1. Efficiently scheduling appointments for patients with dentists.
+2. Managing basic patient records, including personal information and contact details.
+3. User login functionality for doctors and receptionists.
+4. Allowing doctors to assign and manage patient prescriptions.
+5. Enabling doctors to view their scheduled appointments for the day.
+6. Allowing receptionists to add, edit, and delete patient information.
+7. Storing data securely in a file-based system.
+
+By achieving these objectives, we satisfied the constraints of security, scalability, reliability, and user-friendliness.
+
+## Future Work
+
+While the final solution meets the current needs of the University of Regina Campus Dentist Clinic, there are opportunities for future improvements:
+1. **Visual Representations**: Develop dashboards for visualizing key metrics such as patient statistics, appointment schedules, and prescription details.
+2. **Enhanced Appointment Scheduling**: Implement features for rescheduling and canceling appointments more efficiently, with automated notifications.
+3. **Comprehensive Clinic Management**: Integrate billing, inventory management, and patient feedback mechanisms into a more holistic system.
+4. **Interactive Features**: Incorporate more interactive features, such as patient portals for accessing dental records and booking appointments online.
+5. **Advanced Reporting**: Enhance reporting capabilities to provide deeper insights into clinic operations and patient care trends.
+6. **Machine Learning**: Explore the integration of machine learning algorithms to predict patient no-shows, optimize appointment schedules, and personalize patient care.
+
+By addressing these areas, the Dental Clinic Management System can become even more robust and adaptable to future needs.
